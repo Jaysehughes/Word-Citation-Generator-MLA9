@@ -1,4 +1,4 @@
-# MLA9 Word
+# Word-Citation-Generator-MLA9
 A custom stylesheet for Microsoft Word to add support for MLA9 Citations
 
 ---
