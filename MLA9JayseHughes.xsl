@@ -208,6 +208,15 @@
 					<xsl:sort select="b:Title" order="ascending" data-type="text"/>
 
 					<p class="MsoBibliography">
+
+						<xsl:attribute name="style">
+							<xsl:text>
+								margin-left:.5in;
+								text-indent:-.5in;
+								font-size:12pt;
+							</xsl:text>
+						</xsl:attribute>
+
 						<xsl:choose>
 
 							<xsl:when test="b:SourceType='Book'">
