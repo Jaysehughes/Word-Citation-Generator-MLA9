@@ -609,7 +609,7 @@
 									</xsl:when>
 									<xsl:when test="count(b:Author/b:Author/b:Corporate) > 0">
 										<xsl:value-of select="b:Author/b:Author/b:Corporate"/>
-										<xsl:text> "</xsl:text>
+										<xsl:text>. "</xsl:text>
 							            <xsl:call-template name="formatTitlePunctuation"/>
 										<xsl:text>" </xsl:text>
 									</xsl:when>
