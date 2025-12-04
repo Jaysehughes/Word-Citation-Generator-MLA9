@@ -194,7 +194,7 @@
 						</xsl:call-template>
 						<xsl:if test="string-length(b:Citation/b:Pages) > 0">
 							<xsl:text> </xsl:text>
-							<xsl:call-template name="formatPagesBib"/>
+							<xsl:value-of select="b:Citation/b:Pages"/>
 						</xsl:if>
 						<xsl:text>)</xsl:text>
 					</p>
@@ -846,28 +846,6 @@
 			<xsl:otherwise>
 				<xsl:text>p. </xsl:text>
 				<xsl:value-of select="b:Pages"/>
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:template>
-
-	<xsl:template name="formatPagesBib">
-		<xsl:variable name="beforeDash" select="substring-before(b:Citation/b:Pages, '-')"/>
-		<xsl:variable name="afterDash" select="substring-after(b:Citation/b:Pages, '-')"/>
-		<xsl:choose>
-			<xsl:when test="contains(b:Citation/b:Pages, '-')">
-				<xsl:text>pp. </xsl:text>
-				<xsl:choose>
-					<xsl:when test="string-length($beforeDash) = string-length($afterDash) and string-length($beforeDash) > 2 and string-length($afterDash) > 2 and substring($beforeDash, 1, 1) = substring($afterDash, 1, 1)">
-						<xsl:value-of select="concat($beforeDash, '-', substring($afterDash, 2))"/>
-					</xsl:when>
-					<xsl:otherwise>
-						<xsl:value-of select="b:Citation/b:Pages"/>
-					</xsl:otherwise>
-				</xsl:choose>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:text>p. </xsl:text>
-				<xsl:value-of select="b:Citation/b:Pages"/>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
